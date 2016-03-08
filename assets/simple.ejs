@@ -1,0 +1,7 @@
+<% 
+	var l = people.length, i;
+	for(i = 0; i < l; i += 1) { 
+%>
+<h1>Hello <%= people[i].name	%></h1>
+It's great that you are <strong><%= people[i].age %></strong>years old!<br>
+<% } %>

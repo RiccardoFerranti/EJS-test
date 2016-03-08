@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test ejs</title>
+	<link rel="stylesheet" href="stylesheets/css/main.css">
+	<script type="text/javascript" src="js/ejs_0.9_alpha_1_production.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+	<div id="resultDiv"></div>
+
+
+	<script src="./assets/js/create-actions.js"></script>
+	<script>
+		(function (argument) {
+			
+			'use strict';
+			var data, rendered, container = document.getElementById('resultDiv');
+			var data = {
+				name: "Ray", 
+				age: 41
+			};
+			
+			$.getJSON("./assets/data.json", function(res) {
+				data = { people:res };
+				rendered = new EJS({url:'./assets/simple.ejs'}).render(data);
+				container.innerHTML = rendered
+				CreateActions.init();
+			});
+
+		})();
+		// load the template file, then render it with data
+	</script>
+</body>
+</html>
